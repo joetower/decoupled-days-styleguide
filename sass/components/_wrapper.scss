@@ -1,0 +1,15 @@
+//////////////////////////////
+// wrapper
+// @_wrapper.scss
+//////////////////////////////
+
+.wrapper,
+%wrapper {
+  margin: 0 auto;
+  max-width: $grid-width;
+  padding: 15px;
+
+  @include breakpoint($large) {
+    padding: 0;
+  }
+}

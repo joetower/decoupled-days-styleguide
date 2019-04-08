@@ -1,0 +1,33 @@
+//////////////////////////////
+// header
+// @_header.scss
+//////////////////////////////
+
+header {
+  .container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+
+    @include breakpoint($large) {
+      justify-content: space-between;
+    }
+  }
+  .logo-wrap {
+    flex: 0 1 300px;
+  }
+  a.logo {
+    width: 100%;
+  }
+
+  .main-menu {
+    display: flex;
+    flex-flow:row wrap;
+    margin-top: $space-one-half;
+    flex: 0 auto;
+  }
+
+  .main-menu-trigger {
+    flex: 1 auto;
+  }
+}

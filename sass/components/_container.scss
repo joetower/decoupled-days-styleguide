@@ -1,0 +1,9 @@
+//////////////////////////////
+// container
+// @_container.scss
+//////////////////////////////
+
+.container {
+  @extend %wrapper;
+  padding: 0;
+}

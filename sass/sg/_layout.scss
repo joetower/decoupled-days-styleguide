@@ -1,0 +1,294 @@
+//////////////////////////////
+// layout
+// @_layout.scss
+//////////////////////////////
+
+
+// nav and other widths
+.sub-menu,
+.callout {
+  @include breakpoint($medium) {
+    max-width: $callout-width;
+  }
+}
+.teaser {
+  @include breakpoint($medium) {
+    max-width: $teaser-width;
+  }
+  img {
+    width: 100%;
+  }
+}
+
+// Logo
+.logo {
+  header & {
+    width: 100%;
+  }
+}
+header + .wrapper {
+  margin-top: $space;
+}
+.toc {
+
+  background-color: $black;
+  border-bottom: $border-width solid $blue-muted-light;
+
+  .sg-text {
+    flex: 1 auto;
+    font-size: 1.4rem;
+    background-color: $gray-dark;
+    color: $white;
+    padding: $space-one-third;
+    text-align: center;
+
+    @include breakpoint($large) {
+      font-size: 1.6rem;
+    }
+  }
+
+  ol {
+    display: flex;
+    margin: 0;
+
+    flex-flow: row wrap;
+    align-items: flex-start;
+    padding: 0;
+  }
+
+  li {
+    margin: 0;
+    flex: 1 auto;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+
+    a {
+      display: block;
+      font-size: 1.6rem;
+      font-family: $sans;
+      color: $white;
+      padding: $space-one-third;
+      &:hover {
+        color: $black;
+        background-color: $link-highlight;
+      }
+    }
+  }
+}
+.wrapper {
+  section + section {
+    margin-top: $space;
+    padding-bottom: $space-double;
+  }
+}
+
+section {
+
+  &.wrapper {
+    h1 {
+      border-bottom: $border-width solid $gray-light;
+      margin-bottom: $space;
+    }
+  }
+  &.colorbar {
+    h1 {
+      margin-bottom: $space-one-third;
+    }
+  }
+  &.images {
+    max-width: $max-width-image-paragraph;
+
+    article + article {
+      margin-top: $space-double;
+    }
+  }
+}
+
+aside {
+  max-width: $max-width;
+}
+/// Color swatch grid
+.swatchgrid {
+  display: flex;
+  margin: $space/2 0 $space;
+  flex-flow: row wrap;
+  padding: 0;
+
+  @include breakpoint($large) {
+    flex-wrap: nowrap;
+  }
+  .swatch {
+    margin: 0;
+    flex: 1 0 33.333%;
+
+    border: $border-width solid $white;
+    box-shadow:0;
+    position: relative;
+  	padding: $space/2;
+    z-index: 0;
+    list-style-type: none;
+
+    @include breakpoint($large) {
+     flex-basis: auto;
+    }
+    &.color-swatch-1,
+    &.color-swatch-13 {
+      flex-basis: 50%;
+    }
+    span {
+      display: block;
+      margin: 0;
+      padding: 0;
+      word-wrap: break-word;
+      text-align: center;
+      z-index: 0;
+
+      &:after {
+        display: block;
+        z-index: 5;
+      }
+    }
+    &.color-swatch-1 {
+      background-color: $blue;
+      span:after {
+        content: "#{($blue)}";
+      }
+    }
+    &.color-swatch-2 {
+      background-color: $blue-dark;
+      span:after {
+        content: "#{($blue-dark)}";
+      }
+    }
+    &.color-swatch-3 {
+      background-color: $blue-muted-light;
+      span:after {
+        content: "#{($blue-muted-light)}";
+      }
+    }
+    &.color-swatch-4 {
+      background-color: $blue-muted-lighter;
+      span:after {
+        content: "#{($blue-muted-lighter)}";
+      }
+    }
+    &.color-swatch-5 {
+      background-color: $blue-muted-lightest;
+      span:after {
+        content: "#{($blue-muted-lightest)}";
+      }
+    }
+    &.color-swatch-6 {
+      background-color: $blue-muted-lightest;
+      span:after {
+        content: "#{($blue-muted-light)}";
+      }
+    }
+    &.color-swatch-7 {
+      background-color: $gray;
+      span:after {
+        content: "#{($gray)}";
+        color: $white;
+      }
+    }
+    &.color-swatch-8 {
+      background-color: $gray-light;
+      span:after {
+        content: "#{($gray-light)}";
+      }
+    }
+    &.color-swatch-9 {
+      background-color: $gray-lighter;
+      span:after {
+        content: "#{($gray-lighter)}";
+      }
+    }
+    &.color-swatch-10 {
+      background-color: $gray-lightest;
+      span:after {
+        content: "#{($gray-lightest)}";
+      }
+    }
+    &.color-swatch-11 {
+      background-color: $gray-mid;
+      span:after {
+        content: "#{($gray-mid)}";
+        color: $white;
+      }
+    }
+    &.color-swatch-12 {
+      background-color: $gray-dark;
+      span:after {
+        content: "#{($gray-dark)}";
+        color: $white;
+      }
+    }
+    &.color-swatch-13 {
+      background-color: $black;
+      span:after {
+        content: "#{($black)}";
+        color: $white;
+      }
+    }
+
+  }
+}
+.icon-list {
+  max-width: 100%;
+  padding: 0;
+
+  li {
+    display: block;
+    margin: 0 0 $space/2;
+    list-style: none;
+    padding: 0;
+    @include breakpoint($small-medium) {
+      display: inline-block;
+      float: left;
+      width: 50%;
+    }
+    @include breakpoint($medium) {
+      width: 33.33%;
+    }
+  }
+  icon {
+    display: inline-block;
+    padding-left: 26px;
+    background-size: 20px;
+  }
+}
+
+ul.logos {
+  display: block;
+
+  li {
+    display: block;
+    list-style: none;
+    float: left;
+    width: 50%;
+    margin-bottom: $space-one-half;
+    padding: $space-one-third 0;
+
+    a {
+      border-bottom: 0;
+      &:hover {
+        border-bottom: 0;
+      }
+    }
+    span {
+      display: block;
+    }
+  }
+}
+.buttons {
+  button {
+    margin-bottom: 1.5em;
+  }
+  button + button {
+    margin-top: 1em;
+    @include breakpoint($large) {
+      margin-left: 1em;
+    }
+  }
+}

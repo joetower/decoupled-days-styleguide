@@ -1,0 +1,37 @@
+//////////////////////////////
+// footer
+// @_footer.scss
+//////////////////////////////
+
+footer {
+  display: flex;
+
+  .container {
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+
+    @include breakpoint($medium) {
+      flex-flow: row wrap;
+    }
+  }
+  .brand {
+    display: flex;
+    flex: 1 auto;
+    @include breakpoint($medium) {
+      max-width: 50%;
+    }
+  }
+
+  .social {
+    flex: 1 auto;
+    @include breakpoint($medium) {
+      max-width: 50%;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+    }
+  }
+}

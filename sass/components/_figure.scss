@@ -1,0 +1,43 @@
+//////////////////////////////
+// figure
+// @_figure.scss
+//////////////////////////////
+
+figure {
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  position: relative;
+
+  &.image-full {
+    margin-bottom: $space-one-half;
+
+    @include breakpoint($medium) {
+      max-width: $max-width;
+    }
+  }
+  &.image-half {
+    margin-bottom: $space-one-half;
+
+    @include breakpoint($medium) {
+      max-width: $max-width-image-paragraph/2;
+    }
+
+    + p {
+      max-width: $max-width-image-paragraph;
+    }
+  }
+
+  &.left {
+    @include breakpoint($medium) {
+      float: left;
+      margin-right: $space-one-half;
+    }
+  }
+  &.right {
+    @include breakpoint($medium) {
+      float: right;
+      margin-left: $space-one-half;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+//////////////////////////////
+// blockquote
+// @_blockquote.scss
+//////////////////////////////
+
+blockquote {
+  margin: $space-one-half $space $space;
+  color: $gray;
+  font-family: $sans;
+  font-weight: $sans-bold;
+  padding: $space-one-third 0 $space-one-third $space-double;
+  font-style: italic;
+  max-width: $max-width;
+  background-size: 34px;
+  background-position: left 50%;
+}

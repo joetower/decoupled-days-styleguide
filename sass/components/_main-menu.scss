@@ -1,0 +1,44 @@
+//////////////////////////////
+// main menu
+// @_main-menu.scss
+//////////////////////////////
+
+.main-menu {
+
+  @include breakpoint($large) {
+    margin-top: $space-one-half;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    list-style-type: none;
+    @include breakpoint($large) {
+      + li {
+        margin-left: $space;
+      }
+    }
+  }
+  a {
+    display: block;
+    font-size: 1rem;
+    font-weight: $sans-regular;
+    color: $black;
+    text-align: center;
+    border: $border-width solid transparent;
+
+    @include breakpoint($large) {
+      font-size: 1.8rem;
+      font-weight: $sans-bold;
+    }
+
+    &:hover {
+      color: $black;
+    }
+    &.active {
+      background-color: $blue;
+      border-color: $blue;
+    }
+  }
+}

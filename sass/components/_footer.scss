@@ -1,0 +1,23 @@
+//////////////////////////////
+// footer
+// @_footer.scss
+//////////////////////////////
+
+footer {
+  padding:$space-double $space;
+  margin-top: $space-double;
+  background-color: $gray;
+  color: $white;
+
+  .logo {
+    @include breakpoint($large) {
+      margin-left: -80px;
+    }
+  }
+  .site-slogan {
+
+    @include breakpoint($medium) {
+      margin-right: $space-one-half;
+    }
+  }
+}

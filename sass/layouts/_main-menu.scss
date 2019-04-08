@@ -1,0 +1,18 @@
+//////////////////////////////
+// main menu
+// @_main-menu.scss
+//////////////////////////////
+
+.main-menu {
+
+  ul {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  li {
+    flex: 1 auto;
+    a {
+      flex: 1 auto;
+    }
+  }
+}

@@ -1,0 +1,26 @@
+//////////////////////////////
+// button
+// @_button.scss
+//////////////////////////////
+
+a.button,
+a.button:link,
+a.button:visited  {
+  font-size: 1rem;
+  padding: $space/2 $space;
+  transition: all 0.2s ease-in-out;
+  opacity: 1;
+  
+  &:hover {
+    opacity: 0.8;
+  }
+  &.primary {
+    background-color: $blue;
+    color: $white;
+  }
+  &.secondary {
+    background-color: $white;
+    color: $blue;
+  }
+}
+

@@ -1,0 +1,34 @@
+//////////////////////////////
+// figcaption
+// @_figcaption.scss
+//////////////////////////////
+
+figcaption {
+  border-top: $border-width solid $gray;
+  padding: $space-one-third $space-one-half;
+
+  // credit
+  span {
+    display: block;
+  }
+
+  cite {
+    font-weight: $sans-bold;
+  }
+
+  .image-full & {
+    cite {
+      @include breakpoint($medium) {
+        max-width: 80%;
+      }
+    }
+    span {
+      @include breakpoint($medium) {
+        display: inline-block;
+        float: right;
+        max-width: 20%;
+      }
+    }
+  }
+
+}

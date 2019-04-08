@@ -1,0 +1,29 @@
+//////////////////////////////
+// logo
+// @_logo.scss
+//////////////////////////////
+
+
+.logo-wrap {
+  display: block;
+
+  .logo {
+    margin: 0;
+    padding: 0;
+    text-indent: -1000px;
+    overflow: hidden;
+    height: 0;
+    padding-bottom: (130/367) * 100%; // Intrinsic ratio
+
+    background: {
+      size: contain;
+      position: left center;
+      repeat: no-repeat;
+    }
+
+    &.dd2019 {
+      background-image: url('../img/logos/decoupled-days-logo.svg');
+    }
+
+  }
+}

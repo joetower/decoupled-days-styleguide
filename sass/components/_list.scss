@@ -1,0 +1,47 @@
+//////////////////////////////
+// list
+// @_list.scss
+//////////////////////////////
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  article & {
+    margin-bottom: $space-one-half;
+    max-width: $max-width;
+    padding-left: $space;
+
+    li {
+      margin-bottom: $space-one-third;
+    }
+  }
+
+  + p,
+  + h2,
+  + h3,
+  + h4,
+  + h5,
+  + h6 {
+    margin-top: $space;
+  }
+  ul {
+    list-style-type: disc;
+  }
+  ol {
+    list-style-type: decimal;
+  }
+
+  // special lists
+
+  // list with check marks
+  &.check {
+    margin-bottom: $space;
+
+    li {
+      margin-bottom: $space-one-half;
+      padding-left: $space;
+      list-style-type: none;
+    }
+  }
+}

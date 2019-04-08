@@ -1,0 +1,41 @@
+//////////////////////////////
+// link
+// @_link.scss
+//////////////////////////////
+a,
+a:link {
+  color: $link;
+  text-decoration: none;
+  transition: all 0.15s;
+
+  &:visited {
+    color: mix(black, $link, 10%);
+  }
+  &:hover {
+    color: mix(black, $link, 60%);
+  }
+
+  // fancy links for full node links
+  article.full & {
+    &:not(.button) {
+      border-bottom: $border-width/2 solid $link;
+      background-image: linear-gradient(to right, $white 50%, $link-highlight 50%);
+      background-position: 0;
+       // make the background twice as big
+      background-size: 200%;
+      transition: all 0.2s;
+
+      &:hover {
+        border-color: mix($black, $link-highlight, 40%);
+        background-position: -100%;
+      }
+      &:visited {
+        border-color: mix($white, $link, 80%);
+        &:hover {
+          border-color: mix(black, $link, 40%);
+          color: mix(black, $link, 40%);
+        }
+      }
+    }
+  }
+}
