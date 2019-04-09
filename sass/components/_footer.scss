@@ -4,10 +4,10 @@
 //////////////////////////////
 
 footer {
-  padding:$space-double $space;
-  margin-top: $space-double;
-  background-color: $gray;
-  color: $white;
+  padding:$space*2 $space;
+  margin-top: $space*2;
+  background-color: $gray-lightest;
+  color: $gray;
 
   .logo {
     @include breakpoint($large) {

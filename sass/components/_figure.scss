@@ -18,26 +18,36 @@ figure {
   }
   &.image-half {
     margin-bottom: $space-one-half;
+    flex-basis: 40%;
 
     @include breakpoint($medium) {
       max-width: $max-width-image-paragraph/2;
     }
 
     + p {
+      flex-basis: 60%;
       max-width: $max-width-image-paragraph;
     }
   }
 
   &.left {
     @include breakpoint($medium) {
-      float: left;
+      order: 1;
       margin-right: $space-one-half;
+
+      + p {
+        order: 2;
+      }
     }
   }
   &.right {
     @include breakpoint($medium) {
-      float: right;
+      order: 2;
       margin-left: $space-one-half;
+
+      + p {
+        order: 1;
+      }
     }
   }
 }

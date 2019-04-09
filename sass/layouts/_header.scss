@@ -13,12 +13,6 @@ header {
       justify-content: space-between;
     }
   }
-  .logo-wrap {
-    flex: 0 1 300px;
-  }
-  a.logo {
-    width: 100%;
-  }
 
   .main-menu {
     display: flex;
@@ -30,4 +24,11 @@ header {
   .main-menu-trigger {
     flex: 1 auto;
   }
+}
+
+.logo-wrap {
+  flex: 0 1 300px;
+}
+a.logo {
+  width: 100%;
 }

@@ -627,6 +627,7 @@ header {
   padding: 0;
   text-indent: -1000px;
   overflow: hidden;
+  width: 100%;
   height: 0;
   padding-bottom: 35.42234%;
   background-size: contain;
@@ -739,10 +740,13 @@ ol.check li {
 a.button,
 a.button:link,
 a.button:visited {
-  font-size: 1rem;
+  font-size: 1.6rem;
   padding: 15px 30px;
+  border-radius: 6px;
   transition: all 0.2s ease-in-out;
   opacity: 1;
+  cursor: pointer;
+  font-weight: 700;
 }
 
 a.button:hover,
@@ -763,6 +767,8 @@ a.button:link.secondary,
 a.button:visited.secondary {
   background-color: #FFFFFF;
   color: #0075BE;
+  border: 1px solid #0075BE;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
 @media (min-width: 64em) {
@@ -868,7 +874,7 @@ textarea {
 article form {
   max-width: 660px;
   padding: 30px;
-  background-color: #F4F4F4;
+  background-color: #F1F1F1;
 }
 
 hr {
@@ -884,8 +890,8 @@ hr.color {
 footer {
   padding: 60px 30px;
   margin-top: 60px;
-  background-color: #4A4A4A;
-  color: #FFFFFF;
+  background-color: #F1F1F1;
+  color: #4A4A4A;
 }
 
 @media (min-width: 64em) {
@@ -1022,15 +1028,6 @@ header .container {
   }
 }
 
-header .logo-wrap {
-  -ms-flex: 0 1 300px;
-      flex: 0 1 300px;
-}
-
-header a.logo {
-  width: 100%;
-}
-
 header .main-menu {
   display: -ms-flexbox;
   display: flex;
@@ -1044,6 +1041,15 @@ header .main-menu {
 header .main-menu-trigger {
   -ms-flex: 1 auto;
       flex: 1 auto;
+}
+
+.logo-wrap {
+  -ms-flex: 0 1 300px;
+      flex: 0 1 300px;
+}
+
+a.logo {
+  width: 100%;
 }
 
 .main-menu ul {
@@ -1199,17 +1205,15 @@ header + .wrapper {
 }
 
 .wrapper section + section {
-  margin-top: 30px;
-  padding-bottom: 60px;
+  margin-top: 90px;
+  padding-bottom: 120px;
 }
 
 section.wrapper h1 {
-  border-bottom: 6px solid #CCCCCC;
   margin-bottom: 30px;
-}
-
-section.colorbar h1 {
-  margin-bottom: 10px;
+  background-color: #E0E0E0;
+  text-align: center;
+  padding: 15px 30px;
 }
 
 section.images {
@@ -1352,11 +1356,11 @@ aside {
 }
 
 .swatchgrid .swatch.color-swatch-10 {
-  background-color: #F4F4F4;
+  background-color: #F1F1F1;
 }
 
 .swatchgrid .swatch.color-swatch-10 span:after {
-  content: "#F4F4F4";
+  content: "#F1F1F1";
 }
 
 .swatchgrid .swatch.color-swatch-11 {
@@ -1400,8 +1404,10 @@ aside {
 
 @media (min-width: 35em) {
   .icon-list li {
-    display: inline-block;
-    float: left;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex: 0 auto;
+        flex: 0 auto;
     width: 50%;
   }
 }
@@ -1413,7 +1419,8 @@ aside {
 }
 
 .icon-list icon {
-  display: inline-block;
+  display: -ms-flexbox;
+  display: flex;
   padding-left: 26px;
   background-size: 20px;
 }
@@ -1423,9 +1430,9 @@ ul.logos {
 }
 
 ul.logos li {
-  display: block;
+  display: -ms-flexbox;
+  display: flex;
   list-style: none;
-  float: left;
   width: 50%;
   margin-bottom: 15px;
   padding: 10px 0;

@@ -78,8 +78,8 @@ header + .wrapper {
 }
 .wrapper {
   section + section {
-    margin-top: $space;
-    padding-bottom: $space-double;
+    margin-top: $space*3;
+    padding-bottom: $space*4;
   }
 }
 
@@ -87,13 +87,10 @@ section {
 
   &.wrapper {
     h1 {
-      border-bottom: $border-width solid $gray-light;
       margin-bottom: $space;
-    }
-  }
-  &.colorbar {
-    h1 {
-      margin-bottom: $space-one-third;
+      background-color: $gray-lighter;
+      text-align: center;
+      padding: $space/2 $space;
     }
   }
   &.images {
@@ -244,8 +241,8 @@ aside {
     list-style: none;
     padding: 0;
     @include breakpoint($small-medium) {
-      display: inline-block;
-      float: left;
+      display: flex;
+      flex: 0 auto;
       width: 50%;
     }
     @include breakpoint($medium) {
@@ -253,7 +250,7 @@ aside {
     }
   }
   icon {
-    display: inline-block;
+    display: flex;
     padding-left: 26px;
     background-size: 20px;
   }
@@ -263,9 +260,8 @@ ul.logos {
   display: block;
 
   li {
-    display: block;
+    display: flex;
     list-style: none;
-    float: left;
     width: 50%;
     margin-bottom: $space-one-half;
     padding: $space-one-third 0;

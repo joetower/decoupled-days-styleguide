@@ -83,9 +83,12 @@ gulp.task('scripts', function() {
 gulp.task('styles', function () {
   'use strict';
   return gulp.src(paths.sass + '/**/*.scss')
+  .pipe(sassLint())
+  .pipe(sassLint.format())
+  .pipe(sassLint.failOnError())
   .pipe(sass(eyeglass(sassOptions)).on('error', sass.logError))
-  .pipe(prefix(["last 1 version", "> 1%", "ie 8"]))
-    .pipe(gulp.dest(paths.css));
+  .pipe(prefix({browsers: ['last 1 version', '> 1%', 'ie 8', 'ie 9', 'ie 10']}))
+  .pipe(gulp.dest(paths.css));
 });
 
 //
@@ -118,9 +121,12 @@ gulp.task('sprite-shortcut', function() {
 gulp.task('browserSync', function () {
   
   browserSync.init(null, {
-    proxy: 'sg.decoupled-days.com',
+    server: {
+      baseDir: './'
+    },
+    port: 8080,
     files: [
-      paths.html +  '/*.html',
+      paths.sass +  '/**/*.scss',
       paths.css +  '/**/*.css',
       paths.js + '/**/*.js',
       paths.img + '/**/*',
@@ -131,4 +137,4 @@ gulp.task('browserSync', function () {
 /**
  * Default gulp task.
  */
-gulp.task('default', ['scripts', 'styles', 'watch']);
+gulp.task('default', ['scripts', 'styles', 'watch', 'browserSync']);
