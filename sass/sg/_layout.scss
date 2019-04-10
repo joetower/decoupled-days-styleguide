@@ -39,7 +39,7 @@ header + .wrapper {
     font-size: 1.4rem;
     background-color: $gray-dark;
     color: $white;
-    padding: $space-one-third;
+    padding: $space/3;
     text-align: center;
 
     @include breakpoint($large) {
@@ -68,7 +68,7 @@ header + .wrapper {
       font-size: 1.6rem;
       font-family: $sans;
       color: $white;
-      padding: $space-one-third;
+      padding: $space/3;
       &:hover {
         color: $black;
         background-color: $link-highlight;
@@ -97,7 +97,7 @@ section {
     max-width: $max-width-image-paragraph;
 
     article + article {
-      margin-top: $space-double;
+      margin-top: $space*2;
     }
   }
 }
@@ -263,8 +263,8 @@ ul.logos {
     display: flex;
     list-style: none;
     width: 50%;
-    margin-bottom: $space-one-half;
-    padding: $space-one-third 0;
+    margin-bottom: $space/2;
+    padding: $space/3 0;
 
     a {
       border-bottom: 0;

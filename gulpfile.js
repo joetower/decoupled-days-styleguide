@@ -23,7 +23,7 @@ var gulp        = require('gulp'),
       js: 'js',
       sourceJs: 'src_js',
       sass: 'sass',
-      css: 'css'
+      css: 'css',
     },
 
     // add sassOptions for output style and eyeglass.
@@ -87,18 +87,20 @@ gulp.task('styles', function () {
   .pipe(sassLint.format())
   .pipe(sassLint.failOnError())
   .pipe(sass(eyeglass(sassOptions)).on('error', sass.logError))
-  .pipe(prefix({browsers: ['last 1 version', '> 1%', 'ie 8', 'ie 9', 'ie 10']}))
-  .pipe(gulp.dest(paths.css));
+  .pipe(prefix({browsers: ['last 1 version', '> 1%', 'ie 9', 'ie 10']}))
+  .pipe(gulp.dest(paths.css))
 });
 
 //
 // Watch
 //
+
 gulp.task('watch', function () {
   'use strict';
   gulp.watch(paths.js + '/**/*.js', ['scripts']);
   gulp.watch(paths.sass + '/**/*.scss', ['styles']);
 });
+
 
 /**
  * Task for generating svg sprite.
@@ -119,18 +121,17 @@ gulp.task('sprite-shortcut', function() {
  * Task for running browserSync.
  */
 gulp.task('browserSync', function () {
-  
-  browserSync.init(null, {
+  'use strict';
+  var files= [
+    paths.css + '/**/*.css',
+    paths.sourceJs + '/**/*.js'
+  ];
+  browserSync.init(files, {
     server: {
       baseDir: './'
     },
-    port: 8080,
-    files: [
-      paths.sass +  '/**/*.scss',
-      paths.css +  '/**/*.css',
-      paths.js + '/**/*.js',
-      paths.img + '/**/*',
-    ]
+    port:8000,
+    notify:true,
   });
 });
 

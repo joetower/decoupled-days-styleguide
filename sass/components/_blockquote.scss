@@ -4,11 +4,11 @@
 //////////////////////////////
 
 blockquote {
-  margin: $space-one-half $space $space;
+  margin: $space/2 $space $space;
   color: $gray;
   font-family: $sans;
   font-weight: $sans-bold;
-  padding: $space-one-third 0 $space-one-third $space-double;
+  padding: $space/3 0 $space/3 $space*2;
   font-style: italic;
   max-width: $max-width;
   background-size: 34px;

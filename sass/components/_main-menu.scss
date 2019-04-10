@@ -6,7 +6,7 @@
 .main-menu {
 
   @include breakpoint($large) {
-    margin-top: $space-one-half;
+    margin-top: $space/2;
   }
   ul {
     margin: 0;
@@ -26,7 +26,7 @@
     font-weight: $sans-regular;
     color: $black;
     text-align: center;
-    border: $border-width solid transparent;
+    border-bottom: $border-width solid transparent;
 
     @include breakpoint($large) {
       font-size: 1.8rem;
@@ -37,7 +37,6 @@
       color: $black;
     }
     &.active {
-      background-color: $blue;
       border-color: $blue;
     }
   }

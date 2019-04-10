@@ -17,7 +17,7 @@ footer {
   .site-slogan {
 
     @include breakpoint($medium) {
-      margin-right: $space-one-half;
+      margin-right: $space/2;
     }
   }
 }

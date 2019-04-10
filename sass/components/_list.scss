@@ -8,12 +8,12 @@ ol {
   margin: 0;
   padding: 0;
   article & {
-    margin-bottom: $space-one-half;
+    margin-bottom: $space/2;
     max-width: $max-width;
     padding-left: $space;
 
     li {
-      margin-bottom: $space-one-third;
+      margin-bottom: $space/3;
     }
   }
 
@@ -39,7 +39,7 @@ ol {
     margin-bottom: $space;
 
     li {
-      margin-bottom: $space-one-half;
+      margin-bottom: $space/2;
       padding-left: $space;
       list-style-type: none;
     }

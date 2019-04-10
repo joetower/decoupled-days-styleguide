@@ -741,7 +741,7 @@ a.button,
 a.button:link,
 a.button:visited {
   font-size: 1.6rem;
-  padding: 15px 30px;
+  padding: 15px 60px;
   border-radius: 6px;
   transition: all 0.2s ease-in-out;
   opacity: 1;
@@ -771,6 +771,10 @@ a.button:visited.secondary {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
+.button + .button {
+  margin-left: 30px;
+}
+
 @media (min-width: 64em) {
   .main-menu {
     margin-top: 15px;
@@ -798,7 +802,7 @@ a.button:visited.secondary {
   font-weight: 600;
   color: #000;
   text-align: center;
-  border: 6px solid transparent;
+  border-bottom: 6px solid transparent;
 }
 
 @media (min-width: 64em) {
@@ -813,7 +817,6 @@ a.button:visited.secondary {
 }
 
 .main-menu a.active {
-  background-color: #0075BE;
   border-color: #0075BE;
 }
 
@@ -954,6 +957,8 @@ figure.image-full {
 
 figure.image-half {
   margin-bottom: 15px;
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
 }
 
 @media (min-width: 48em) {
@@ -963,20 +968,32 @@ figure.image-half {
 }
 
 figure.image-half + p {
+  -ms-flex-preferred-size: 60%;
+      flex-basis: 60%;
   max-width: 860px;
 }
 
 @media (min-width: 48em) {
   figure.left {
-    float: left;
+    -ms-flex-order: 1;
+        order: 1;
     margin-right: 15px;
+  }
+  figure.left + p {
+    -ms-flex-order: 2;
+        order: 2;
   }
 }
 
 @media (min-width: 48em) {
   figure.right {
-    float: right;
+    -ms-flex-order: 2;
+        order: 2;
     margin-left: 15px;
+  }
+  figure.right + p {
+    -ms-flex-order: 1;
+        order: 1;
   }
 }
 
@@ -1007,11 +1024,79 @@ figcaption cite {
   }
 }
 
+.top-bar {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column wrap;
+      flex-flow: column wrap;
+  background-color: #0075BE;
+  color: #FFFFFF;
+}
+
+@media (min-width: 48em) {
+  .top-bar {
+    -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+  }
+}
+
+.top-bar--inner {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  padding: 15px;
+  width: 100%;
+}
+
+@media (min-width: 80em) {
+  .top-bar--inner {
+    padding: 10px 0;
+  }
+}
+
+.top-bar--date {
+  -ms-flex: 1 auto;
+      flex: 1 auto;
+}
+
+.top-bar--date strong {
+  display: block;
+  font-size: 1.8rem;
+}
+
+@media (min-width: 48em) {
+  .top-bar--date {
+    -ms-flex: 0 auto;
+        flex: 0 auto;
+  }
+}
+
+.top-bar--register {
+  -ms-flex: 1 auto;
+      flex: 1 auto;
+}
+
+@media (min-width: 48em) {
+  .top-bar--register {
+    -ms-flex: 0 auto;
+        flex: 0 auto;
+  }
+}
+
+.top-bar--register a {
+  display: block;
+}
+
 /*
 //////////////////////////////
 // Layouts
 //////////////////////////////
 */
+header {
+  background-color: rebeccapurple;
+}
+
 header .container {
   display: -ms-flexbox;
   display: flex;

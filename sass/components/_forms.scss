@@ -10,7 +10,7 @@ fieldset {
     padding:0;
   }
   h4 {
-    margin-bottom: $space-one-third;
+    margin-bottom: $space/3;
   }
 }
 .form-item {
@@ -23,7 +23,7 @@ fieldset {
 label + input[type=text],
 label + textarea {
   display: block;
-  padding: $space-one-third;
+  padding: $space/3;
 }
 
 input[type=text],

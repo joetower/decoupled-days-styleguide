@@ -10,14 +10,14 @@ figure {
   position: relative;
 
   &.image-full {
-    margin-bottom: $space-one-half;
+    margin-bottom: $space/2;
 
     @include breakpoint($medium) {
       max-width: $max-width;
     }
   }
   &.image-half {
-    margin-bottom: $space-one-half;
+    margin-bottom: $space/2;
     flex-basis: 40%;
 
     @include breakpoint($medium) {
@@ -33,7 +33,7 @@ figure {
   &.left {
     @include breakpoint($medium) {
       order: 1;
-      margin-right: $space-one-half;
+      margin-right: $space/2;
 
       + p {
         order: 2;
@@ -43,7 +43,7 @@ figure {
   &.right {
     @include breakpoint($medium) {
       order: 2;
-      margin-left: $space-one-half;
+      margin-left: $space/2;
 
       + p {
         order: 1;

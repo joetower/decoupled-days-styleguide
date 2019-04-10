@@ -22,23 +22,23 @@ body {
 p {
   margin: 0;
   + p {
-    margin-top: $space+$space-one-half;
+    margin-top: $space+$space/2;
   }
   + h2,
   + h3,
   + h4,
   + h5,
   + h6 {
-    margin-top: $space+$space-one-half;
+    margin-top: $space+$space/2;
   }
   + ul,
   + ol {
-    margin-top: $space-one-half;
+    margin-top: $space/2;
   }
 }
 // headings
 h1, h2, h3, h4, h5, h6 {
-  margin: 0 0 $space-one-third;
+  margin: 0 0 $space/3;
   font-family: $sans;
   line-height: 1.2;
 }
