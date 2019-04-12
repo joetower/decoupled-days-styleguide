@@ -11,7 +11,6 @@ var gulp        = require('gulp'),
     sass        = require('gulp-sass'),
     sassLint    = require('gulp-sass-lint'),
     prefix      = require('gulp-autoprefixer'),
-    glob        = require('glob'),
     concat      = require('gulp-concat'),
     uglify      = require('gulp-uglify'),
     stripDebug  = require('gulp-strip-debug'),
@@ -47,7 +46,7 @@ var gulp        = require('gulp'),
       svg: {
         xmlDeclaration: false, // strip out the XML attribute
         doctypeDeclaration: false // don't include the !DOCTYPE declaration
-      }
+      },
   };
 
 /**
@@ -87,9 +86,10 @@ gulp.task('styles', function () {
   .pipe(sassLint.format())
   .pipe(sassLint.failOnError())
   .pipe(sass(eyeglass(sassOptions)).on('error', sass.logError))
-  .pipe(prefix({browsers: ['last 1 version', '> 1%', 'ie 9', 'ie 10']}))
+  .pipe(prefix(['last 1 version', '> 1%','ie 10']))
   .pipe(gulp.dest(paths.css))
 });
+
 
 //
 // Watch
