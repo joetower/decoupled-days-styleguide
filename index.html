@@ -33,6 +33,8 @@
 						<li><a href="#images">Images</a></li>
 						<li><a href="#lists">Lists</a></li>
 						<li><a href="#main-menu">Main Menu</a></li>
+						<li><a href="#sessions">Sessions</a></li>
+						<li><a href="#sponsors">Sponsors</a></li>
 						<li><a href="#footer">Footer</a></li>
 					</ol>
 				</nav>
@@ -74,16 +76,20 @@
 					</h1>
 					<h2>Primary Colors</h2>
 					<ul class="swatchgrid">
-						<li class="color-swatch-1 swatch"><span></span></li>
-						<li class="color-swatch-2 swatch"><span></span></li>
+						<li class="color-swatch-1 swatch">
+							$blue: #0075BE
+						</li>
+						<li class="color-swatch-2 swatch">
+							$blue-dark: #00588E
+						</li>
 					</ul>
 
 					<h2>Secondary Colors</h2>
 					<ul class="swatchgrid">
-						<li class="color-swatch-3 swatch"><span></span></li>
-						<li class="color-swatch-4 swatch"><span></span></li>
-						<li class="color-swatch-5 swatch"><span></span></li>
-						<li class="color-swatch-6 swatch"><span></span></li>
+						<li class="color-swatch-3 swatch">$blue-muted: #68899C;</li>
+						<li class="color-swatch-4 swatch">$blue-muted-light: #8EA5B5;</li>
+						<li class="color-swatch-5 swatch">$blue-muted-lighter: #B6C4CE;</li>
+						<li class="color-swatch-6 swatch">$blue-muted-lightest: #D9E0E8;</li>
 					</ul>
 
 					<h3>Neutrals &amp; Grays</h3>
@@ -104,8 +110,8 @@
 					</h1>
 					<ul class="logos">
 						<li>
-							<a class="logo" href="#">
-								<span class="logo acc">American Craft Council</span>
+							<a class="logo-wrap" href="#">
+								<span class="logo dd2019">Decoupled Days 2019</span>
 							</a>
 						</li>
 					</ul>
@@ -117,14 +123,14 @@
 
 					<h2>All headings</h2>
 					<ul>
-						<li><code>font-family: Gotham;</code></li>
-						<li><code>font-weight(s):400, 700, 800;</code></li>
+						<li><code>font-family: Open Sans;</code></li>
+						<li><code>font-weight(s):600, 700, 800;</code></li>
 					</ul>
 
 					<h2>Paragraphs</h2>
 					<ul>
-						<li><code>font-family: Gotham;</code></li>
-						<li><code>font-weight(s):400, 700;</code></li>
+						<li><code>font-family: Open Sans;</code></li>
+						<li><code>font-weight(s):600, 700;</code></li>
 					</ul>
 
 					<h1>Header Level 1</h1>
@@ -187,6 +193,28 @@
 				</article>
 			</section>
 
+			<section>
+				<article class="typography">
+						<p><em>example home page content</em></p>
+						<h2>The only conference on the future of CMS, headlessCMS, and decoupledCMS.</h2>
+						<h4>July 17–18, 2019 / New York City / John Jay</h4>
+						
+						<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+						incididunt ut labore et dolore magna aliqua. Et molestie ac feugiat sed lectus
+						vestibulum mattis ullamcorper velit. Quisque id diam vel quam elementum pulvinar
+						etiam. Et netus et malesuada fames. Aliquam etiam erat velit scelerisque in dictum
+						non consectetur. Neque convallis a cras semper auctor neque vitae tempus. Dolor
+						morbi non arcu risus quis. In metus vulputate eu scelerisque. In nisl nisi scelerisque
+						eu. Et tortor consequat id porta. Egestas pretium aenean pharetra magna ac placerat
+						vestibulum. Donec adipiscing tristique risus nec feugiat in fermentum posuere.
+						Congue nisi vitae suscipit tellus. Ornare suspendisse sed nisi lacus sed viverra tellus.
+						</p>
+						<h4>Thank you to all our sponsors!</h4>
+				</article>
+			</section>
+
+
 			<section class="blockquote">
 				<article class="full">
 					<h1 id="blockquote">
@@ -208,60 +236,65 @@
 			</section>
 
 			<section class="images">
-				<article class="full">
 					<h1 id="images">
-						Images
-					</h1>
-					<h2>Image Full</h2>
+							Images
+						</h1>
+						<h2>Image Full</h2>
+				<article class="full">
 					<figure class="image-full">
-							<img src="https://via.placeholder.com/800x600" alt="Art picture">
-							<figcaption><cite>Example picture with caption.</cite> <span class="credit">Credit text</span></figcaption>
-					</figure>
-					<p>
-						<strong>Ut a est eget ligula</strong> molestie gravida.
-						Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada
-						tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est. Ut a est eget ligula molestie gravida.
-						Curabitur massa. Donec eleifend, libero at sagittis mollis, <em>tellus est malesuada</em>
-						tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est. Ut a est eget ligula molestie gravida.
-						Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada
-						tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.
-					</p>
-				</article>
-
-				<article class="full">
-					<h2>Image half - align left</h2>
-					<figure class="image-half left">
-							<img src="https://via.placeholder.com/400x300" alt="Art picture">
-							<figcaption><cite>Example picture with caption.</cite> <span class="credit">Credit text</span></figcaption>
-					</figure>
-
-					<p>
-						Ut a est eget ligula molestie gravida.
-						Curabitur massa. Donec eleifend, <strong>libero at sagittis mollis, tellus est malesuada</strong>
-						tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est. Ut a est eget ligula molestie gravida.
-						Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada
-						tellus, at luctus turpis elit sit amet quam. <em>Vivamus pretium</em> ornare est. Ut a est eget ligula molestie gravida.
-						Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada
-						tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.
-					</p>
-				</article>
-
-				<article class="full">
-					<h2>Image half - align right</h2>
-					<figure class="image-half right">
-						<img src="https://via.placeholder.com/400x300" alt="Art picture">
+						<img src="https://via.placeholder.com/800x600" alt="Art picture">
 						<figcaption><cite>Example picture with caption.</cite> <span class="credit">Credit text</span></figcaption>
 					</figure>
+					<div class="content">
+						<p>
+							<strong>Ut a est eget ligula</strong> molestie gravida.
+							Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada
+							tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est. Ut a est eget ligula molestie gravida.
+							Curabitur massa. Donec eleifend, libero at sagittis mollis, <em>tellus est malesuada</em>
+							tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est. Ut a est eget ligula molestie gravida.
+							Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada
+							tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.
+						</p>
+					</div>
+				</article>
 
-					<p>
-						<strong>Ut a est eget ligula molestie gravida.</strong>
-						Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada
-						tellus, at luctus turpis elit sit amet quam. <em>Vivamus pretium ornare est</em>. Ut a est eget ligula molestie gravida.
-						Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada
-						tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est. Ut a est eget ligula molestie gravida.
-						Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada
-						tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.
-					</p>
+				<h2>Image half - align left</h2>
+
+				<article class="full with--image">
+					<figure class="image-half left">
+							<img src="https://via.placeholder.com/400x300" alt="picture">
+							<figcaption><cite>Example picture with caption.</cite> <span class="credit">Credit text</span></figcaption>
+					</figure>
+					<div class="content">
+						<p>
+							Ut a est eget ligula molestie gravida.
+							Curabitur massa. Donec eleifend, <strong>libero at sagittis mollis, tellus est malesuada</strong>
+							tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est. Ut a est eget ligula molestie gravida.
+							Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada
+							tellus, at luctus turpis elit sit amet quam. <em>Vivamus pretium</em> ornare est. Ut a est eget ligula molestie gravida.
+							Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada
+							tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.
+						</p>
+					</div>
+				</article>
+
+				<h2>Image half - align right</h2>
+				<article class="full with--image">
+					<figure class="image-half right">
+						<img src="https://via.placeholder.com/400x300" alt="picture">
+						<figcaption><cite>Example picture with caption.</cite> <span class="credit">Credit text</span></figcaption>
+					</figure>
+					<div class="content">
+						<p>
+							<strong>Ut a est eget ligula molestie gravida.</strong>
+							Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada
+							tellus, at luctus turpis elit sit amet quam. <em>Vivamus pretium ornare est</em>. Ut a est eget ligula molestie gravida.
+							Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada
+							tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est. Ut a est eget ligula molestie gravida.
+							Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada
+							tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.
+						</p>
+					</div>
 				</article>
 
 			</section>
@@ -382,6 +415,210 @@
 					</ul>
 				</nav>
 			</section>
+
+			<section class="sessions">
+				<h1 id="sessions">Sessions</h1>
+				<div class="container">
+
+				<h2>Wednesday, July 17th &amp; Thursday, July 18th</h2>
+				<div class="session sponsor--notice">
+					<div class="session--time">
+						9:00AM-5:00PM
+					</div>
+					<div class="session--wrap">
+						<div class="session--name">
+							Sponsors in Exhibit Hall
+						</div>
+					</div>
+				</div>
+
+					<h2>Wednesday, July 17th</h2>
+
+					<div class="session">
+						<div class="session--time">
+							8:00-9:00AM
+						</div>
+						<div class="session--wrap">
+							<div class="session--name">
+								Registration
+							</div>
+						</div>
+					</div>
+					<div class="session">
+						<div class="session--time">
+							9:00-9:10AM
+						</div>
+						<div class="session--wrap">
+							<div class="session--item">
+								<div class="session--name">
+									Opening Remarks
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="session">
+						<div class="session--time">
+							9:10-10:00AM
+						</div>
+						<div class="session--wrap">
+							<div class="session--item">
+								<div class="session--name">
+									Session name here which
+									could be long and more
+									than one line
+								</div>
+								<div class="session--speaker">
+									Speaker name(s)
+								</div>
+								<div class="session--room">
+									Room: Aten Design Group Lecture Hall
+								</div>
+							</div>
+							<div class="session--item">
+								<div class="session--name">
+									Session name here which
+									could be long and more
+									than one line
+								</div>
+								<div class="session--speaker">
+									Speaker name(s)
+								</div>
+								<div class="session--room">
+									Room: Aten Design Group Lecture Hall
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="session">
+						<div class="session--time">
+							10:00-10:15AM
+						</div>
+						<div class="session--wrap">
+							<div class="session--item">
+								<div class="session--name">
+									Opening Remarks
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="session">
+						<div class="session--time">
+							10:15-11:15AM
+						</div>
+						<div class="session--wrap">
+							<div class="session--item">
+								<div class="session--name">
+									Session name here which
+									could be long and more
+									than one line
+								</div>
+								<div class="session--speaker">
+									Speaker name(s)
+								</div>
+								<div class="session--room">
+									Room: Aten Design Group Lecture Hall
+								</div>
+							</div>
+							<div class="session--item">
+								<div class="session--name">
+									Session name here which
+									could be long and more
+									than one line
+								</div>
+								<div class="session--speaker">
+									Speaker name(s)
+								</div>
+								<div class="session--room">
+									Room: Aten Design Group Lecture Hall
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+	
+			<section class="sponsors">
+				<h1 id="sponsors">Sponsors</h1>
+	
+				<div class="container">
+					<div class="sponsor--header diamond">
+						<h3>Diamond Sponsors</h3>
+					</div>
+					<div class="sponsor--grid diamond">
+						<div class="sponsor--item">
+							<img src="https://via.placeholder.com/300x300" alt="sponsor logo">
+						</div>
+						<div class="sponsor--item">
+							<img src="https://via.placeholder.com/300x300" alt="sponsor logo">
+						</div>
+						<div class="sponsor--item">
+							<img src="https://via.placeholder.com/300x300" alt="sponsor logo">
+						</div>
+					</div>
+					<div class="sponsor--header gold">
+						<h3>Gold Sponsors</h3>
+					</div>
+					<div class="sponsor--grid gold">
+						<div class="sponsor--item">
+							<img src="https://via.placeholder.com/200x400" alt="sponsor logo">
+						</div>
+						<div class="sponsor--item">
+							<img src="https://via.placeholder.com/200x200" alt="sponsor logo">
+						</div>
+						<div class="sponsor--item">
+							<img src="https://via.placeholder.com/200x400" alt="sponsor logo">
+						</div>
+					</div>
+					<div class="sponsor--header silver">
+						<h3>Silver Sponsors</h3>
+					</div>
+					<div class="sponsor--grid silver">
+						<div class="sponsor--item">
+							<img src="https://via.placeholder.com/200x200" alt="sponsor logo">
+						</div>
+						<div class="sponsor--item">
+							<img src="https://via.placeholder.com/200x200" alt="sponsor logo">
+						</div>
+						<div class="sponsor--item">
+							<img src="https://via.placeholder.com/200x200" alt="sponsor logo">
+						</div>
+						<div class="sponsor--item">
+							<img src="https://via.placeholder.com/200x200" alt="sponsor logo">
+						</div>
+						<div class="sponsor--item">
+							<img src="https://via.placeholder.com/200x200" alt="sponsor logo">
+						</div>
+						<div class="sponsor--item">
+							<img src="https://via.placeholder.com/200x200" alt="sponsor logo">
+						</div>
+					</div>
+					<div class="sponsor--header bronze">
+						<h3>Bronze Sponsors</h3>
+					</div>
+					<div class="sponsor--grid bronze">
+						<div class="sponsor--item">
+							<img src="https://via.placeholder.com/200x200" alt="sponsor logo">
+						</div>
+						<div class="sponsor--item">
+							<img src="https://via.placeholder.com/200x200" alt="sponsor logo">
+						</div>
+						<div class="sponsor--item">
+							<img src="https://via.placeholder.com/200x200" alt="sponsor logo">
+						</div>
+						<div class="sponsor--item">
+							<img src="https://via.placeholder.com/200x200" alt="sponsor logo">
+						</div>
+						<div class="sponsor--item">
+							<img src="https://via.placeholder.com/200x200" alt="sponsor logo">
+						</div>
+						<div class="sponsor--item">
+							<img src="https://via.placeholder.com/200x200" alt="sponsor logo">
+						</div>
+					</div>
+				</div>
+			</section>
+
+
 		</section>
 
 		<footer id="footer">
@@ -394,10 +631,9 @@
 				</div>
 
 				<ul class="social">
-					<li><a class="facebook" href="http://www.facebook.com/CraftCouncil">Facebook</a></li>
-					<li><a class="twitter" href="http://twitter.com/#!/craftcouncil">Twitter</a></li>
-					<li><a class="instagram" href="http://instagram.com/craftcouncil">Instagram</a></li>
-					<li><a class="pinterest" href="http://www.pinterest.com/craftcouncil/">Pinterest</a></li>
+					<li><a class="twitter" href="https://twitter.com/decoupleddays">Twitter</a></li>
+					<li><a class="email" href="mailto:decoupleddays@gmail.com">Email</a></li>
+					<li><a class="newsletter" href="#">Newsletter</a></li>
 				</ul>
 			</div>
 		</footer>

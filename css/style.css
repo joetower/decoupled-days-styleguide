@@ -433,6 +433,10 @@ p {
   margin: 0;
 }
 
+article p {
+  max-width: 660px;
+}
+
 p + p {
   margin-top: 45px;
 }
@@ -454,6 +458,10 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 10px;
   font-family: "Open Sans", sans-serif;
   line-height: 1.2;
+}
+
+article h1, article h2, article h3, article h4, article h5, article h6 {
+  max-width: 660px;
 }
 
 h1 + h2,
@@ -493,7 +501,6 @@ h3 {
   font-size: 2rem;
   font-weight: 800;
   color: #4A4A4A;
-  text-transform: uppercase;
 }
 
 @media (min-width: 64em) {
@@ -654,32 +661,6 @@ a:link:visited {
 a:hover,
 a:link:hover {
   color: #002339;
-}
-
-article.full a:not(.button), article.full
-a:link:not(.button) {
-  border-bottom: 3px solid #00588E;
-  background-image: linear-gradient(to right, #FFFFFF 50%, #0075BE 50%);
-  background-position: 0;
-  background-size: 200%;
-  transition: all 0.2s;
-}
-
-article.full a:not(.button):hover, article.full
-a:link:not(.button):hover {
-  border-color: #004672;
-  background-position: -100%;
-}
-
-article.full a:not(.button):visited, article.full
-a:link:not(.button):visited {
-  border-color: #ccdee8;
-}
-
-article.full a:not(.button):visited:hover, article.full
-a:link:not(.button):visited:hover {
-  border-color: #003555;
-  color: #003555;
 }
 
 ul,
@@ -957,20 +938,13 @@ figure.image-full {
 
 figure.image-half {
   margin-bottom: 15px;
-  -ms-flex-preferred-size: 40%;
-      flex-basis: 40%;
+  -ms-flex: 1 calc(40% - 15px);
+      flex: 1 calc(40% - 15px);
 }
 
-@media (min-width: 48em) {
-  figure.image-half {
-    max-width: 430px;
-  }
-}
-
-figure.image-half + p {
-  -ms-flex-preferred-size: 60%;
-      flex-basis: 60%;
-  max-width: 860px;
+figure.image-half + .content {
+  -ms-flex: 1 60%;
+      flex: 1 60%;
 }
 
 @media (min-width: 48em) {
@@ -979,7 +953,7 @@ figure.image-half + p {
         order: 1;
     margin-right: 15px;
   }
-  figure.left + p {
+  figure.left + .content {
     -ms-flex-order: 2;
         order: 2;
   }
@@ -991,7 +965,7 @@ figure.image-half + p {
         order: 2;
     margin-left: 15px;
   }
-  figure.right + p {
+  figure.right + .content {
     -ms-flex-order: 1;
         order: 1;
   }
@@ -1088,15 +1062,189 @@ figcaption cite {
   display: block;
 }
 
+.sponsor--grid {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  -ms-flex-align: center;
+      align-items: center;
+}
+
+.sponsor--grid + .sponsor--grid {
+  margin-top: 60px;
+}
+
+.sponsor--header {
+  display: block;
+  padding: 30px;
+  text-align: center;
+}
+
+.sponsor--header h3 {
+  color: #4A4A4A;
+}
+
+.sponsor--header.diamond {
+  background-color: #68899C;
+}
+
+.sponsor--header.diamond h3 {
+  color: #FFFFFF;
+}
+
+.sponsor--header.gold {
+  background-color: #8EA5B5;
+}
+
+.sponsor--header.silver {
+  background-color: #B6C4CE;
+}
+
+.sponsor--header.bronze {
+  background-color: #D9E0E8;
+}
+
+.sponsor--item {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex: 1 auto;
+      flex: 1 auto;
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
+  -ms-flex-pack: center;
+      justify-content: center;
+  padding: 30px;
+}
+
+.sponsor--item img {
+  width: 100%;
+  max-width: 200px;
+}
+
+.diamond .sponsor--item {
+  -ms-flex-preferred-size: 33.333%;
+      flex-basis: 33.333%;
+}
+
+.diamond .sponsor--item img {
+  max-width: 300px;
+}
+
+.gold .sponsor--item img {
+  max-width: 200px;
+}
+
+@media (min-width: 64em) {
+  .silver .sponsor--item {
+    -ms-flex-preferred-size: 20%;
+        flex-basis: 20%;
+  }
+}
+
+@media (min-width: 64em) {
+  .bronze .sponsor--item {
+    -ms-flex-preferred-size: 20%;
+        flex-basis: 20%;
+  }
+}
+
+.sessions h2 {
+  margin-bottom: 30px;
+}
+
+.session {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column wrap;
+      flex-flow: column wrap;
+  padding: 30px;
+  background-color: #E0E0E0;
+  font-size: 1.8rem;
+}
+
+.session.sponsor--notice {
+  background-color: #FFFFFF;
+  border-width: 6px 6px 6px 12px;
+  border-style: solid;
+  border-color: #68899C;
+  margin-bottom: 60px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+@media (min-width: 64em) {
+  .session {
+    -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+  }
+}
+
+.session:nth-child(odd) {
+  background-color: #F1F1F1;
+}
+
+.session .session--wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  -ms-flex: 1 auto;
+      flex: 1 auto;
+  -ms-flex-align: start;
+      align-items: flex-start;
+}
+
+@media (min-width: 64em) {
+  .session .session--wrap {
+    -ms-flex: 0 1 80%;
+        flex: 0 1 80%;
+  }
+}
+
+.session .session--item {
+  -ms-flex: 1 auto;
+      flex: 1 auto;
+}
+
+.session .session--time {
+  -ms-flex: 1 auto;
+      flex: 1 auto;
+  font-weight: 700;
+}
+
+@media (min-width: 64em) {
+  .session .session--time {
+    -ms-flex: 0 1 20%;
+        flex: 0 1 20%;
+  }
+}
+
+article.with--image {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column nowrap;
+      flex-flow: column nowrap;
+}
+
+@media (min-width: 48em) {
+  article.with--image {
+    -ms-flex-flow: row wrap;
+        flex-flow: row wrap;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+  }
+}
+
+article.full {
+  margin-bottom: 30px;
+}
+
 /*
 //////////////////////////////
 // Layouts
 //////////////////////////////
 */
-header {
-  background-color: rebeccapurple;
-}
-
 header .container {
   display: -ms-flexbox;
   display: flex;
@@ -1384,27 +1532,27 @@ aside {
 }
 
 .swatchgrid .swatch.color-swatch-3 {
-  background-color: #8EA5B5;
+  background-color: #68899C;
 }
 
 .swatchgrid .swatch.color-swatch-3 span:after {
-  content: "#8EA5B5";
+  content: "#68899C";
 }
 
 .swatchgrid .swatch.color-swatch-4 {
-  background-color: #B6C4CE;
+  background-color: #8EA5B5;
 }
 
 .swatchgrid .swatch.color-swatch-4 span:after {
-  content: "#B6C4CE";
+  content: "#8EA5B5";
 }
 
 .swatchgrid .swatch.color-swatch-5 {
-  background-color: #D9E0E8;
+  background-color: #B6C4CE;
 }
 
 .swatchgrid .swatch.color-swatch-5 span:after {
-  content: "#D9E0E8";
+  content: "#B6C4CE";
 }
 
 .swatchgrid .swatch.color-swatch-6 {
@@ -1412,7 +1560,7 @@ aside {
 }
 
 .swatchgrid .swatch.color-swatch-6 span:after {
-  content: "#8EA5B5";
+  content: "#D9E0E8";
 }
 
 .swatchgrid .swatch.color-swatch-7 {

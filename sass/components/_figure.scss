@@ -18,15 +18,10 @@ figure {
   }
   &.image-half {
     margin-bottom: $space/2;
-    flex-basis: 40%;
+    flex: 1 calc(40% - 15px);
 
-    @include breakpoint($medium) {
-      max-width: $max-width-image-paragraph/2;
-    }
-
-    + p {
-      flex-basis: 60%;
-      max-width: $max-width-image-paragraph;
+    + .content {
+      flex:1 60%;
     }
   }
 
@@ -35,7 +30,7 @@ figure {
       order: 1;
       margin-right: $space/2;
 
-      + p {
+      + .content {
         order: 2;
       }
     }
@@ -45,7 +40,7 @@ figure {
       order: 2;
       margin-left: $space/2;
 
-      + p {
+      + .content {
         order: 1;
       }
     }

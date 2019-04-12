@@ -159,29 +159,30 @@ aside {
       }
     }
     &.color-swatch-3 {
+      background-color: $blue-muted;
+      span:after {
+        content: "#{($blue-muted)}";
+      }
+    }
+    &.color-swatch-4 {
       background-color: $blue-muted-light;
       span:after {
         content: "#{($blue-muted-light)}";
       }
     }
-    &.color-swatch-4 {
+    &.color-swatch-5 {
       background-color: $blue-muted-lighter;
       span:after {
         content: "#{($blue-muted-lighter)}";
       }
     }
-    &.color-swatch-5 {
+    &.color-swatch-6 {
       background-color: $blue-muted-lightest;
       span:after {
         content: "#{($blue-muted-lightest)}";
       }
     }
-    &.color-swatch-6 {
-      background-color: $blue-muted-lightest;
-      span:after {
-        content: "#{($blue-muted-light)}";
-      }
-    }
+
     &.color-swatch-7 {
       background-color: $gray;
       span:after {

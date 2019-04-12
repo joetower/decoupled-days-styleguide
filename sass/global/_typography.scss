@@ -21,6 +21,9 @@ body {
 // paragraphs
 p {
   margin: 0;
+  article & {
+    max-width: $max-width;
+  }
   + p {
     margin-top: $space+$space/2;
   }
@@ -41,6 +44,10 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 $space/3;
   font-family: $sans;
   line-height: 1.2;
+
+  article & {
+    max-width: $max-width;
+  }
 }
 
 h1 + h2,
@@ -79,7 +86,6 @@ h3,
 
   font-weight: $sans-bolder;
   color:$gray;
-  text-transform: uppercase;
 
   @include breakpoint($large) {
     font-size: 2.8rem;

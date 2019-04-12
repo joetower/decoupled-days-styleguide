@@ -1,0 +1,80 @@
+//////////////////////////////
+// Sponsor
+// _sponsor.scss
+//////////////////////////////
+
+.sponsor--grid {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+
+  + .sponsor--grid {
+    margin-top: $space*2;
+  }
+}
+
+// sponsor headers
+.sponsor--header {
+  display: block;
+  padding: $space;
+  text-align: center;
+
+  h3 {
+    color: $gray;
+  }
+
+  &.diamond {
+    background-color:$blue-muted;
+    h3 {
+      color: $white;
+    }
+  }
+  &.gold {
+    background-color:$blue-muted-light;
+  }
+  &.silver {
+    background-color:$blue-muted-lighter;
+  }
+  &.bronze {
+    background-color:$blue-muted-lightest;
+  }
+}
+
+// default sizes
+.sponsor--item {
+  display: flex;
+  flex: 1 auto;
+  flex-basis: 25%; // default for all levels.
+  justify-content: center;
+  padding: $space;
+
+  img {
+    width: 100%;
+    max-width: 200px; // default for all levels.
+  }
+
+  .diamond & {
+    flex-basis: 33.333%; // change if more than 3 diamond-level sponsors.
+    img {
+      max-width: 300px; // default for all levels.
+    }
+  }
+
+  .gold & {
+    img {
+      max-width: 200px;
+    }
+  }
+
+  .silver & {
+    @include breakpoint($large) {
+      flex-basis: 20%;
+    }
+  }
+
+  .bronze & {
+    @include breakpoint($large) {
+      flex-basis: 20%;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+//////////////////////////////
+// Article
+// _article.scss
+//////////////////////////////
+
+article {
+  &.with--image {
+    display: flex;
+    flex-flow: column nowrap;
+    @include breakpoint($medium) {
+      flex-flow: row wrap;
+      justify-content: space-between;
+    }
+  }
+  &.full {
+    margin-bottom: $space;
+  }
+}

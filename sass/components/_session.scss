@@ -1,0 +1,57 @@
+//////////////////////////////
+// Sessions
+// _sessions.scss
+//////////////////////////////
+
+.sessions {
+  h2 {
+    margin-bottom: $space;
+  }
+}
+.session {
+  display: flex;
+  flex-flow: column wrap;
+  padding: $space;
+  background-color: $gray-lighter;
+  font-size: 1.8rem;
+
+  &.sponsor--notice {
+    background-color: $white;
+    border-width: $border-width $border-width $border-width $border-width*2;
+    border-style: solid ;
+    border-color: $blue-muted;
+    margin-bottom: $space*2;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  @include breakpoint($large) {
+    flex-flow: row wrap;
+  }
+
+  &:nth-child(odd) {
+    background-color: $gray-lightest;
+  }
+  
+  .session--wrap {
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1 auto;
+    align-items: flex-start;
+
+    @include breakpoint($large) {
+      flex: 0 1 80%;
+    }
+  }
+  .session--item {
+    flex: 1 auto;
+  }
+  .session--time {
+    flex: 1 auto;
+    font-weight: 700;
+
+    @include breakpoint($large) {
+      flex: 0 1 20%;
+    }
+  }
+}
