@@ -5,65 +5,52 @@
 
 'use strict';
 
-var gulp        = require('gulp'),
-    jshint      = require('gulp-jshint'),
-    stylish     = require('jshint-stylish'),
-    sass        = require('gulp-sass'),
-    sassLint    = require('gulp-sass-lint'),
-    prefix      = require('gulp-autoprefixer'),
-    concat      = require('gulp-concat'),
-    uglify      = require('gulp-uglify'),
-    stripDebug  = require('gulp-strip-debug'),
-    rename      = require('gulp-rename'),
-    browserSync = require('browser-sync'),
-    eyeglass    = require('eyeglass'),
-    svgSprite   = require('gulp-svg-sprite'),
-    paths = {
-      js: 'js',
-      sourceJs: 'src_js',
-      sass: 'sass',
-      css: 'css',
-    },
+var browserSync = require('browser-sync');
+var gulp = require('gulp-npm-run')(require('gulp-help')(require('gulp')));
+var sass = require('gulp-sass');
+var prefix = require('gulp-autoprefixer');
+var concat = require('gulp-concat');
+var rename = require('gulp-rename');
+var stripDebug = require('gulp-strip-debug');
+var uglify = require('gulp-uglify');
+var eyeglass = require('eyeglass');
 
-    // add sassOptions for output style and eyeglass.
+//
+// Path settings
+//
+var paths = {
+  js: 'js',
+  sourceJs: 'src_js',
+  sass: 'sass',
+  css: 'css',
+};
 
-    sassOptions = {
-      outputStyle: 'expanded',
-      eyeglass: {
-        enableImportOnce: false
-      }
-    },
+// add sassOptions for output style and eyeglass.
 
-    // SVG Config
-    SVGconfig = {
-      mode: {
-        symbol: { // symbol mode to build the SVG
-          dest: 'sprite', // destination foldeer
-          sprite: 'sprite.svg', //sprite name
-          example: true // Build sample page
-        }
-      },
-      svg: {
-        xmlDeclaration: false, // strip out the XML attribute
-        doctypeDeclaration: false // don't include the !DOCTYPE declaration
-      },
-  };
+var sassOptions = {
+  outputStyle: 'expanded',
+  eyeglass: {
+    enableImportOnce: false
+  }
+}
 
-/**
- * Task for linting javascript.
- */
-gulp.task('lint', function () {
-  return gulp.src([
-    paths.sourceJs + '/**/*.js'
-  ])
-  .pipe(jshint())
-  .pipe(jshint.reporter(stylish))
-});
+// SVG Config
+var SVGconfig = {
+  mode: {
+    symbol: { // symbol mode to build the SVG
+      dest: 'sprite', // destination foldeer
+      sprite: 'sprite.svg', //sprite name
+      example: true // Build sample page
+    }
+  },
+  svg: {
+    xmlDeclaration: false, // strip out the XML attribute
+    doctypeDeclaration: false // don't include the !DOCTYPE declaration
+  },
+};
 
-/**
- * Task for processing javascript files into one file.
- */
-gulp.task('scripts', function() {
+gulp.task('scripts', function () {
+  'use strict';
   return gulp.src(paths.sourceJs + '/**/*.js')
     // Concatenate everything within the JavaScript folder.
     .pipe(concat('scripts.js'))
@@ -76,15 +63,13 @@ gulp.task('scripts', function() {
     .pipe(gulp.dest(paths.js));
 });
 
+
 //
 // SASS Task
 //
 gulp.task('styles', function () {
   'use strict';
   return gulp.src(paths.sass + '/**/*.scss')
-  .pipe(sassLint())
-  .pipe(sassLint.format())
-  .pipe(sassLint.failOnError())
   .pipe(sass(eyeglass(sassOptions)).on('error', sass.logError))
   .pipe(prefix(['last 1 version', '> 1%','ie 10']))
   .pipe(gulp.dest(paths.css))
