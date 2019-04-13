@@ -8,10 +8,12 @@
 var browserSync = require('browser-sync');
 var gulp = require('gulp-npm-run')(require('gulp-help')(require('gulp')));
 var sass = require('gulp-sass');
+var sassLint    = require('gulp-sass-lint');
 var prefix = require('gulp-autoprefixer');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var stripDebug = require('gulp-strip-debug');
+var svgSprite   = require('gulp-svg-sprite');
 var uglify = require('gulp-uglify');
 var eyeglass = require('eyeglass');
 
@@ -70,6 +72,9 @@ gulp.task('scripts', function () {
 gulp.task('styles', function () {
   'use strict';
   return gulp.src(paths.sass + '/**/*.scss')
+  .pipe(sassLint())
+  .pipe(sassLint.format())
+  .pipe(sassLint.failOnError())
   .pipe(sass(eyeglass(sassOptions)).on('error', sass.logError))
   .pipe(prefix(['last 1 version', '> 1%','ie 10']))
   .pipe(gulp.dest(paths.css))
@@ -91,7 +96,7 @@ gulp.task('watch', function () {
  * Task for generating svg sprite.
  */
 gulp.task('sprite-page', function() {
-  return gulp.src('svg/**/*.svg')
+  return gulp.src('img/icons/*.svg')
     .pipe(svgSprite(SVGconfig))
     .pipe(gulp.dest('.'));
 });

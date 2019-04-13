@@ -7,7 +7,7 @@
   display: flex;
   flex-flow: row wrap;
   align-items: center;
-
+  
   + .sponsor--grid {
     margin-top: $space*2;
   }
@@ -16,6 +16,8 @@
 // sponsor headers
 .sponsor--header {
   display: block;
+  margin-top: $space*2;
+  margin-bottom: $space;
   padding: $space;
   text-align: center;
   position: relative;
@@ -69,18 +71,12 @@
   flex: 1 auto;
   flex-basis: 25%; // default for all levels.
   justify-content: center;
-  padding: $space;
-
-  img {
-    width: 100%;
-    max-width: 200px; // default for all levels.
+  padding: $space/3;
+  @include breakpoint($large) {
+    padding: $space;
   }
-
   .diamond & {
     flex-basis: 33.333%; // change if more than 3 diamond-level sponsors.
-    img {
-      max-width: 300px; // default for all levels.
-    }
   }
 
   .gold & {

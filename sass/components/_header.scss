@@ -6,4 +6,36 @@
 header {
   padding: $space;
   color: $gray-mid;
+
+  .container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .main-menu {
+    display: none;
+    flex-flow:row wrap;
+    margin-top: $space/2;
+    flex: 0 auto;
+    
+    &.active {
+      display: flex;
+    }
+    @include breakpoint($large) {
+      display: flex;
+    }
+  }
+}
+
+.logo-wrap {
+  flex: 0 1 150px;
+  @include breakpoint($large) {
+    flex: 0 1 300px;
+  }
+}
+
+a.logo {
+  width: 100%;
 }

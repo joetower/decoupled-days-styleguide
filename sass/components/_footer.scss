@@ -4,8 +4,9 @@
 //////////////////////////////
 
 footer {
-  padding:$space*2 $space;
+  display: flex;
   margin-top: $space*2;
+  padding:$space*2 $space;
   background-color: $gray-lightest;
   color: $gray;
 
@@ -18,6 +19,34 @@ footer {
 
     @include breakpoint($medium) {
       margin-right: $space/2;
+    }
+  }
+  .container {
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+
+    @include breakpoint($medium) {
+      flex-flow: row wrap;
+    }
+  }
+  .brand {
+    display: flex;
+    flex: 1 auto;
+    @include breakpoint($medium) {
+      max-width: 50%;
+    }
+  }
+
+  .social {
+    flex: 1 auto;
+    @include breakpoint($medium) {
+      max-width: 50%;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
     }
   }
 }
