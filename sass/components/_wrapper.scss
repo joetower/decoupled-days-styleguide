@@ -5,11 +5,8 @@
 
 .wrapper,
 %wrapper {
-  margin: 0 auto;
-  max-width: $grid-width;
-  padding: 15px;
-
   @include breakpoint($large) {
-    padding: 0;
+    margin: 0 auto;
+    max-width: $grid-width;
   }
 }

@@ -7,7 +7,8 @@
   display: flex;
   flex-flow: row wrap;
   align-items: center;
-  
+  width: 100%;
+
   + .sponsor--grid {
     margin-top: $space*2;
   }
@@ -67,33 +68,79 @@
 
 // default sizes
 .sponsor--item {
-  display: flex;
-  flex: 1 auto;
-  flex-basis: 25%; // default for all levels.
+  display: block;
+  flex: 0 25%;
   justify-content: center;
   padding: $space/3;
+
   @include breakpoint($large) {
     padding: $space;
   }
+
   .diamond & {
     flex-basis: 33.333%; // change if more than 3 diamond-level sponsors.
+    img {
+      max-width: 300px;
+    }
   }
 
   .gold & {
-    img {
-      max-width: 200px;
+    flex-basis: 50%;
+
+    @include breakpoint($large) {
+      flex-basis: 33.333%;
+      
+      img {
+        max-width: 200px;
+      }
     }
   }
 
   .silver & {
+    flex-basis: 33.333%;
+
     @include breakpoint($large) {
       flex-basis: 20%;
     }
   }
 
   .bronze & {
+    flex-basis: 33.333%;
+
     @include breakpoint($large) {
       flex-basis: 20%;
     }
+  }
+}
+
+// Header sponsors
+.header--sponsors {
+  background-color: $blue-muted-lightest;
+  padding: $space;
+  margin-bottom: $space*2;
+  h3 {
+    color: $blue-muted;
+  }
+  &:before {
+    display: block;
+    position: absolute;
+    content: "";
+    background-color: $blue-muted-lighter;
+    width: 100%;
+    height: 100%;
+    left: -1rem;
+    top: -1rem;
+    z-index: -1;
+  }
+  &:after {
+    display: block;
+    position: absolute;
+    content: "";
+    background-color: $blue-muted-light;
+    width: 100%;
+    height: 100%;
+    right: -1rem;
+    bottom: -1rem;
+    z-index: -1;
   }
 }

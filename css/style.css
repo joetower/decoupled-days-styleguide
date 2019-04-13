@@ -602,27 +602,36 @@ ol {
 // COMPONENTS
 //////////////////////////////
 */
-.wrapper,
+@media (min-width: 64em) {
+  .wrapper,
+  .container {
+    margin: 0 auto;
+    max-width: 1280px;
+  }
+}
+
 .container {
-  margin: 0 auto;
-  max-width: 1280px;
-  padding: 15px;
+  padding: 0 30px;
+  position: relative;
 }
 
 @media (min-width: 64em) {
-  .wrapper,
   .container {
     padding: 0;
   }
 }
 
-.container {
-  padding: 0;
-}
-
 header {
   padding: 30px;
   color: #8E8E8E;
+}
+
+@media (min-width: 64em) {
+  header {
+    overflow: hidden;
+    padding-bottom: 210px;
+    padding-top: 0;
+  }
 }
 
 header .container {
@@ -634,6 +643,13 @@ header .container {
       align-items: flex-start;
   -ms-flex-pack: justify;
       justify-content: space-between;
+  padding: 0;
+}
+
+@media (min-width: 64em) {
+  header .container {
+    padding: 30px;
+  }
 }
 
 header .main-menu {
@@ -673,6 +689,30 @@ a.logo {
   width: 100%;
 }
 
+.header--bg-image {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.4;
+}
+
+@media (min-width: 64em) {
+  .header--bg-image {
+    display: block;
+  }
+}
+
+.header--bg-image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 0 50%;
+     object-position: 0 50%;
+  width: 100%;
+}
+
 .logo-wrap {
   display: block;
 }
@@ -709,6 +749,7 @@ a:link:visited {
 a:hover,
 a:link:hover {
   color: #002339;
+  text-decoration: underline;
 }
 
 ul,
@@ -766,6 +807,7 @@ ol.check li {
   list-style-type: none;
 }
 
+input[type=submit],
 a.button,
 a.button:link,
 a.button:visited {
@@ -779,12 +821,15 @@ a.button:visited {
   text-align: center;
 }
 
+input[type=submit]:hover,
 a.button:hover,
 a.button:link:hover,
 a.button:visited:hover {
   opacity: 0.8;
+  text-decoration: none;
 }
 
+input[type=submit].primary,
 a.button.primary,
 a.button:link.primary,
 a.button:visited.primary {
@@ -792,6 +837,7 @@ a.button:visited.primary {
   color: #FFFFFF;
 }
 
+input[type=submit].secondary,
 a.button.secondary,
 a.button:link.secondary,
 a.button:visited.secondary {
@@ -799,10 +845,6 @@ a.button:visited.secondary {
   color: #0075BE;
   border: 1px solid #0075BE;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-}
-
-.button + .button {
-  margin-left: 30px;
 }
 
 .main-menu {
@@ -828,8 +870,8 @@ a.button:visited.secondary {
 }
 
 .main-menu li {
-  -ms-flex: 1 auto;
-      flex: 1 auto;
+  -ms-flex: 0 auto;
+      flex: 0 auto;
   width: 100%;
   list-style-type: none;
 }
@@ -870,7 +912,8 @@ a.button:visited.secondary {
 }
 
 .main-menu a:hover {
-  color: #000;
+  color: #0075BE;
+  text-decoration: none;
 }
 
 .main-menu a.active {
@@ -890,6 +933,11 @@ a.button:visited.secondary {
   .main-menu-toggle {
     display: none;
   }
+}
+
+.main-menu-toggle a {
+  display: block;
+  cursor: pointer;
 }
 
 .main-menu-toggle svg {
@@ -977,6 +1025,10 @@ input[type=text]:focus,
 textarea:focus {
   border-color: #8EA5B5;
   outline-color: #8EA5B5;
+}
+
+input[type=submit] {
+  border: none;
 }
 
 input[type=text] {
@@ -1100,15 +1152,13 @@ footer .social li {
 }
 
 blockquote {
-  margin: 15px 30px 30px;
+  margin: 15px 0 30px;
   color: #4A4A4A;
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
-  padding: 10px 0 10px 60px;
+  padding: 10px 30px;
   font-style: italic;
   max-width: 660px;
-  background-size: 34px;
-  background-position: left 50%;
 }
 
 figure {
@@ -1267,6 +1317,7 @@ figcaption cite {
       flex-flow: row wrap;
   -ms-flex-align: center;
       align-items: center;
+  width: 100%;
 }
 
 .sponsor--grid + .sponsor--grid {
@@ -1331,12 +1382,9 @@ figcaption cite {
 }
 
 .sponsor--item {
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex: 1 auto;
-      flex: 1 auto;
-  -ms-flex-preferred-size: 25%;
-      flex-basis: 25%;
+  display: block;
+  -ms-flex: 0 25%;
+      flex: 0 25%;
   -ms-flex-pack: center;
       justify-content: center;
   padding: 10px;
@@ -1353,8 +1401,28 @@ figcaption cite {
       flex-basis: 33.333%;
 }
 
-.gold .sponsor--item img {
-  max-width: 200px;
+.diamond .sponsor--item img {
+  max-width: 300px;
+}
+
+.gold .sponsor--item {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+}
+
+@media (min-width: 64em) {
+  .gold .sponsor--item {
+    -ms-flex-preferred-size: 33.333%;
+        flex-basis: 33.333%;
+  }
+  .gold .sponsor--item img {
+    max-width: 200px;
+  }
+}
+
+.silver .sponsor--item {
+  -ms-flex-preferred-size: 33.333%;
+      flex-basis: 33.333%;
 }
 
 @media (min-width: 64em) {
@@ -1364,11 +1432,50 @@ figcaption cite {
   }
 }
 
+.bronze .sponsor--item {
+  -ms-flex-preferred-size: 33.333%;
+      flex-basis: 33.333%;
+}
+
 @media (min-width: 64em) {
   .bronze .sponsor--item {
     -ms-flex-preferred-size: 20%;
         flex-basis: 20%;
   }
+}
+
+.header--sponsors {
+  background-color: #D9E0E8;
+  padding: 30px;
+  margin-bottom: 60px;
+}
+
+.header--sponsors h3 {
+  color: #68899C;
+}
+
+.header--sponsors:before {
+  display: block;
+  position: absolute;
+  content: "";
+  background-color: #B6C4CE;
+  width: 100%;
+  height: 100%;
+  left: -1rem;
+  top: -1rem;
+  z-index: -1;
+}
+
+.header--sponsors:after {
+  display: block;
+  position: absolute;
+  content: "";
+  background-color: #8EA5B5;
+  width: 100%;
+  height: 100%;
+  right: -1rem;
+  bottom: -1rem;
+  z-index: -1;
 }
 
 .sessions h2 {
@@ -1462,6 +1569,14 @@ article.full {
   margin-bottom: 30px;
 }
 
+.no-padding {
+  padding: 0;
+}
+
+.centered {
+  text-align: center;
+}
+
 /*
 //////////////////////////////
 // Layouts
@@ -1547,16 +1662,23 @@ header + .wrapper {
 }
 
 .toc li a:hover {
-  color: #000;
+  color: #FFFFFF;
   background-color: #0075BE;
 }
 
 .wrapper section + section {
-  margin-top: 90px;
-  padding-bottom: 120px;
+  margin-top: 30px;
+  padding-bottom: 30px;
 }
 
-section.wrapper h1 {
+@media (min-width: 64em) {
+  .wrapper section + section {
+    margin-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+section.wrapper h1.sg {
   margin-bottom: 30px;
   background-color: #E0E0E0;
   text-align: center;
@@ -1797,17 +1919,24 @@ ul.logos li span {
   display: block;
 }
 
-.buttons button {
-  margin-bottom: 1.5em;
+.buttons .button {
+  display: block;
+  margin-bottom: 1rem;
 }
 
-.buttons button + button {
-  margin-top: 1em;
+@media (min-width: 48em) {
+  .buttons .button {
+    display: inline-block;
+  }
+}
+
+.buttons .button + .button {
+  margin-top: 1rem;
 }
 
 @media (min-width: 64em) {
-  .buttons button + button {
-    margin-left: 1em;
+  .buttons .button + .button {
+    margin-left: 1rem;
   }
 }
 

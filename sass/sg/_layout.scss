@@ -70,7 +70,7 @@ header + .wrapper {
       color: $white;
       padding: $space/3;
       &:hover {
-        color: $black;
+        color: $white;
         background-color: $link-highlight;
       }
     }
@@ -78,15 +78,20 @@ header + .wrapper {
 }
 .wrapper {
   section + section {
-    margin-top: $space*3;
-    padding-bottom: $space*4;
+    margin-top: $space;
+    padding-bottom: $space;
+
+    @include breakpoint($large) {
+      margin-top: $space*2;
+      padding-bottom: $space*2;
+    }
   }
 }
 
 section {
 
   &.wrapper {
-    h1 {
+    h1.sg {
       margin-bottom: $space;
       background-color: $gray-lighter;
       text-align: center;
@@ -279,13 +284,19 @@ ul.logos {
   }
 }
 .buttons {
-  button {
-    margin-bottom: 1.5em;
+  .button {
+    display:block;
+    margin-bottom: 1rem;
+
+    @include breakpoint($medium) {
+      display: inline-block;
+    }
   }
-  button + button {
-    margin-top: 1em;
+  .button + .button {
+    margin-top: 1rem;
+
     @include breakpoint($large) {
-      margin-left: 1em;
+      margin-left: 1rem;
     }
   }
 }

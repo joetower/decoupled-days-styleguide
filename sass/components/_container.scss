@@ -5,5 +5,10 @@
 
 .container {
   @extend %wrapper;
-  padding: 0;
+  padding: 0 $space;
+  position: relative;
+  
+  @include breakpoint($large) {
+    padding: 0;
+  }
 }

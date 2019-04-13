@@ -13,5 +13,6 @@ a:link {
   }
   &:hover {
     color: mix(black, $link, 60%);
+    text-decoration: underline;
   }
 }

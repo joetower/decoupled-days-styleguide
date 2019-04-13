@@ -35,6 +35,9 @@ textarea {
     outline-color: $blue-muted-light;
   }
 }
+input[type=submit] {
+  border: none;
+}
 input[type=text] {
   width:100%;
 
