@@ -17,7 +17,7 @@
 
   &.sponsor--notice {
     background-color: $white;
-    border-width: $border-width $border-width $border-width $border-width*2;
+    border-width: $border-width $border-width $border-width $border-width*3;
     border-style: solid ;
     border-color: $blue-muted;
     margin-bottom: $space*2;
@@ -45,6 +45,9 @@
   }
   .session--item {
     flex: 1 auto;
+    @include breakpoint($large) {
+      flex: 1 50%;
+    }
   }
   .session--time {
     flex: 1 auto;

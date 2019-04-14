@@ -238,27 +238,23 @@ aside {
   }
 }
 .icon-list {
+  display: flex;
+  flex-flow: row wrap;
   max-width: 100%;
   padding: 0;
 
   li {
     display: block;
-    margin: 0 0 $space/2;
     list-style: none;
-    padding: 0;
-    @include breakpoint($small-medium) {
-      display: flex;
-      flex: 0 auto;
-      width: 50%;
-    }
+    padding: $space/2;
+    flex: 1 auto;
     @include breakpoint($medium) {
-      width: 33.33%;
+      width: 20%;
     }
   }
-  icon {
-    display: flex;
-    padding-left: 26px;
-    background-size: 20px;
+  svg {
+   width: 40px;
+   height: 40px;
   }
 }
 

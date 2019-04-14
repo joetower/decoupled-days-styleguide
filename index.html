@@ -83,18 +83,20 @@
 			</div>
 		</header>
 	
-		<div class="container">
-			<div class="header--sponsors centered">
-				<h3>Diamond Sponsors</h3>
-				<div class="sponsor--grid diamond">
-					<div class="sponsor--item">
-						<img src="/img/logos/decoupled-days-logo.svg" alt="sponsor logo">
-					</div>
-					<div class="sponsor--item">
-						<img src="/img/logos/4k-logo.svg" alt="sponsor logo">
-					</div>
-					<div class="sponsor--item">
-						<img src="/img/logos/pantheon.png" alt="sponsor logo">
+		<div class="header--sponsor-wrap">
+			<div class="container">
+				<div class="header--sponsors centered">
+					<h3>Diamond Sponsors</h3>
+					<div class="sponsor--grid diamond">
+						<div class="sponsor--item">
+							<img src="/img/logos/decoupled-days-logo.svg" alt="sponsor logo">
+						</div>
+						<div class="sponsor--item">
+							<img src="/img/logos/4k-logo.svg" alt="sponsor logo">
+						</div>
+						<div class="sponsor--item">
+							<img src="/img/logos/pantheon.png" alt="sponsor logo">
+						</div>
 					</div>
 				</div>
 			</div>
@@ -422,8 +424,33 @@
 					<h1 class="sg" id="icons">
 						Icons
 					</h1>
+					<p>Icons set is Font Awesome through the SVG app http://icomoon.io</p>
 					<ul class="icon-list">
-						<li><icon class="icon-account_circle">account_circle</icon></li>
+						<li>
+							<svg class="svg-bars-dims">
+								<use xlink:href="sprite/sprite.svg#bars"></use>
+							</svg>
+						</li>
+						<li>
+							<svg class="svg-close-dims">
+								<use xlink:href="sprite/sprite.svg#close"></use>
+							</svg>
+						</li>
+						<li>
+							<svg class="svg-twitter-dims">
+								<use xlink:href="sprite/sprite.svg#twitter"></use>
+							</svg>
+						</li>
+						<li>
+							<svg class="svg-envelope-dims">
+								<use xlink:href="sprite/sprite.svg#envelope"></use>
+							</svg>
+						</li>
+						<li>
+							<svg class="svg-bullhorn-dims">
+								<use xlink:href="sprite/sprite.svg#bullhorn"></use>
+							</svg>
+						</li>
 					</ul>
 				</article>
 			</section>
@@ -665,16 +692,44 @@
 					<a class="logo-wrap" href="#top">
 						<h1 class="logo dd2019">Decoupled Days 2019</h1>
 					</a>
-
 				</div>
-
+				<div class="info-block">
+					<div class="bottom--date">
+							<p><strong>July 17th-18 / New York City</strong>
+							<br>John Jay College of Criminal Justice<br>
+							524 W 59th St, New York, NY 10019</p>
+					</div>
+				</div>
 				<ul class="social">
-					<li><a class="twitter" href="https://twitter.com/decoupleddays">Twitter</a></li>
-					<li><a class="email" href="mailto:decoupleddays@gmail.com">Email</a></li>
-					<li><a class="newsletter" href="#">Newsletter</a></li>
+					<li>
+						<a class="twitter" href="https://twitter.com/decoupleddays">
+							<svg class="svg-twitter-dims">
+								<use xlink:href="sprite/sprite.svg#twitter"></use>
+							</svg>
+						</a>
+					</li>
+					<li>
+						<a class="email" href="mailto:decoupleddays@gmail.com">
+							<svg class="svg-envelope-dims">
+								<use xlink:href="sprite/sprite.svg#envelope"></use>
+							</svg>
+						</a></li>
+					<li>
+						<a class="newsletter" href="#">
+							<svg class="svg-bullhorn-dims">
+								<use xlink:href="sprite/sprite.svg#bullhorn"></use>
+							</svg>
+						</a>
+					</li>
 				</ul>
 			</div>
 		</footer>
-
+		<div class="copyright">
+			<div class="container">
+				<p>&copy; 2019 Decoupled Days. All rights reserved.<br>
+					Drupal is a registered trademark of Dries Buytaert.
+					</p>
+			</div>
+		</div>
 	</body>
 </html>

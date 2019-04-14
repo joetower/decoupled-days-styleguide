@@ -79,17 +79,17 @@
 
   .diamond & {
     flex-basis: 33.333%; // change if more than 3 diamond-level sponsors.
-    img {
-      max-width: 300px;
+    @include breakpoint($large) {      
+      img {
+        max-width: 350px;
+      }
     }
   }
 
   .gold & {
-    flex-basis: 50%;
+    flex-basis: 33.33%;
 
-    @include breakpoint($large) {
-      flex-basis: 33.333%;
-      
+    @include breakpoint($large) {      
       img {
         max-width: 200px;
       }
@@ -114,6 +114,9 @@
 }
 
 // Header sponsors
+.header--sponsor-wrap  {
+  padding: 0;
+}
 .header--sponsors {
   background-color: $blue-muted-lightest;
   padding: $space;
@@ -121,26 +124,44 @@
   h3 {
     color: $blue-muted;
   }
+  .sponsor--item {
+    flex-basis: 50%;
+    @include breakpoint($medium) {
+      flex-basis: 33.333%;
+    }
+    @include breakpoint($large) {
+      padding: $space/2;
+    }
+  }
+
   &:before {
     display: block;
     position: absolute;
     content: "";
     background-color: $blue-muted-lighter;
-    width: 100%;
+    width: 86.5%;
     height: 100%;
-    left: -1rem;
+    left: 2rem;
     top: -1rem;
     z-index: -1;
+    @include breakpoint($large) {
+      width: 100%;
+      left: -1rem;
+    }
   }
   &:after {
     display: block;
     position: absolute;
     content: "";
     background-color: $blue-muted-light;
-    width: 100%;
+    width: 86.5%;
     height: 100%;
-    right: -1rem;
+    right: 2rem;
     bottom: -1rem;
     z-index: -1;
+    @include breakpoint($large) {
+      width: 100%;
+      right: -1rem;
+    }
   }
 }
