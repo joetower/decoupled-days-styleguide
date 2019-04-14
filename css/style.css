@@ -1613,17 +1613,46 @@ figcaption cite {
       flex: 1 auto;
 }
 
+@media (max-width: 47.9375em) {
+  .session .session--item + .session--item {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #000;
+  }
+}
+
 @media (min-width: 64em) {
   .session .session--item {
     -ms-flex: 1 50%;
         flex: 1 50%;
+    padding: 0 30px;
   }
+}
+
+.session .session--name {
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+}
+
+.session .session--speaker {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.session .session--room {
+  font-size: 1.5rem;
 }
 
 .session .session--time {
   -ms-flex: 1 auto;
       flex: 1 auto;
   font-weight: 700;
+}
+
+@media (max-width: 47.9375em) {
+  .session .session--time {
+    padding-bottom: 30px;
+  }
 }
 
 @media (min-width: 64em) {

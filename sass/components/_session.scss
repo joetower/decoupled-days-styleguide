@@ -45,14 +45,37 @@
   }
   .session--item {
     flex: 1 auto;
+
+    @include breakpoint($below-medium) {
+      + .session--item {
+        margin-top: $space;
+        padding-top: $space;
+        border-top: 1px solid $black;
+      }
+    }
+
     @include breakpoint($large) {
       flex: 1 50%;
+      padding: 0 $space
     }
+  }
+  .session--name {
+    margin-bottom: $space;
+    font-size: 1.8rem;
+  }
+  .session--speaker {
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+  .session--room {
+    font-size: 1.5rem;
   }
   .session--time {
     flex: 1 auto;
     font-weight: 700;
-
+    @include breakpoint($below-medium) {
+      padding-bottom: $space;
+    }
     @include breakpoint($large) {
       flex: 0 1 20%;
     }
